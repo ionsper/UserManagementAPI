@@ -7,7 +7,7 @@ using System.Collections.Concurrent;
 using Serilog;
 using Microsoft.OpenApi.Models;
 using UserManagementAPI;
-using UserManagementAPI.Models; // <-- Add this line
+using UserManagementAPI.Models;
 
 Log.Logger = new LoggerConfiguration()
     .WriteTo.File("logs.txt")
@@ -71,7 +71,7 @@ app.Use(async (context, next) =>
     }
 
     var authHeader = context.Request.Headers.Authorization.FirstOrDefault();
-    var validToken = "TestToken"; // Placeholder for a real token validation
+    var validToken = "TestToken";
 
     if (authHeader is null || !authHeader.StartsWith("Bearer ") || authHeader.Substring(7) != validToken)
     {
