@@ -1,4 +1,4 @@
-namespace UserManagementAPI
+namespace UserManagementAPI.Models
 {
     /// <summary>
     /// Represents a user in the UserManagementAPI.
