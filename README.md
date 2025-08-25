@@ -37,7 +37,7 @@ This project is an **assignment for the course: Back-End Development with .NET o
 1. **Clone the repository:**
 
     ```sh
-    git clone https://github.com/yourusername/UserManagementAPI.git
+    git clone https://github.com/ionsper/UserManagementAPI.git
     cd UserManagementAPI
     ```
 
