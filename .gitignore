@@ -1,0 +1,42 @@
+# Build and publish folders
+bin/
+obj/
+out/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# VS Code settings
+.vscode/
+
+# Logs
+logs.txt
+*.log
+
+# NuGet packages
+*.nupkg
+.nuget/
+packages/
+
+# Dotnet environment files
+.env
+
+# Swagger generated files
+swagger/
+*.swagger
+
+# Other
+*.vs/
+
+# Ignore coverage reports
+coverage/
+*.coverage
+*.coveragexml
+
+# Ignore all appsettings files
+appsettings*
+
+Properties/

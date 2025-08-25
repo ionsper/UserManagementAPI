@@ -1,0 +1,125 @@
+### Root path (should succeed without token)
+GET http://localhost:5000/
+
+### Create User (valid, with token)
+POST http://localhost:5000/users
+Authorization: Bearer TestToken
+Content-Type: application/json
+
+{
+  "name": "Alice",
+  "age": 30
+}
+
+### Create User (missing token, should fail)
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+  "name": "Bob",
+  "age": 25
+}
+
+### Create User (invalid token, should fail)
+POST http://localhost:5000/users
+Authorization: Bearer WrongToken
+Content-Type: application/json
+
+{
+  "name": "Charlie",
+  "age": 40
+}
+
+### Create User (invalid data: missing name)
+POST http://localhost:5000/users
+Authorization: Bearer TestToken
+Content-Type: application/json
+
+{
+  "age": 22
+}
+
+### Create User (invalid data: name too long)
+POST http://localhost:5000/users
+Authorization: Bearer TestToken
+Content-Type: application/json
+
+{
+  "name": "Aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "age": 22
+}
+
+### Create User (invalid data: age out of range)
+POST http://localhost:5000/users
+Authorization: Bearer TestToken
+Content-Type: application/json
+
+{
+  "name": "Dave",
+  "age": 200
+}
+
+### Get All Users (with token)
+GET http://localhost:5000/users
+Authorization: Bearer TestToken
+
+### Get All Users (missing token, should fail)
+GET http://localhost:5000/users
+
+### Get User by Id (valid, with token)
+GET http://localhost:5000/users/1
+Authorization: Bearer TestToken
+
+### Get User by Id (missing token, should fail)
+GET http://localhost:5000/users/1
+
+### Get User by Id (invalid id, with token)
+GET http://localhost:5000/users/999
+Authorization: Bearer TestToken
+
+### Update User (valid, with token)
+PUT http://localhost:5000/users/1
+Authorization: Bearer TestToken
+Content-Type: application/json
+
+{
+  "name": "Alice Updated",
+  "age": 31
+}
+
+### Update User (invalid data: missing name)
+PUT http://localhost:5000/users/1
+Authorization: Bearer TestToken
+Content-Type: application/json
+
+{
+  "age": 32
+}
+
+### Update User (invalid id)
+PUT http://localhost:5000/users/999
+Authorization: Bearer TestToken
+Content-Type: application/json
+
+{
+  "name": "Ghost",
+  "age": 50
+}
+
+### Delete User (valid, with token)
+DELETE http://localhost:5000/users/1
+Authorization: Bearer TestToken
+
+### Delete User (invalid id)
+DELETE http://localhost:5000/users/999
+Authorization: Bearer TestToken
+
+### Delete User (missing token, should fail)
+DELETE http://localhost:5000/users/1
+
+### Trigger error handling middleware (simulate by sending invalid JSON)
+POST http://localhost:5000/users
+Authorization: Bearer TestToken
+Content-Type: application/json
+
+{ invalid json
