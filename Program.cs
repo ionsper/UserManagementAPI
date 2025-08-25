@@ -59,7 +59,7 @@ app.Use(async (context, next) =>
 });
 
 // Simple token-based authentication middleware
-// In a real application, use a robust authentication mechanism.
+// This is a placeholder for demonstration purposes.
 app.Use(async (context, next) =>
 {
     // Allow unauthenticated access to root path
