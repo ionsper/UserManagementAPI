@@ -6,7 +6,7 @@ namespace UserManagementAPI.Models
     /// </summary>
     public class User
     {
-        public string Name { get; set; } = string.Empty; // Required
-        public int? Age { get; set; } // Optional
+        required public string Name { get; set; } = string.Empty;
+        public int? Age { get; set; }
     }
 }

@@ -1,7 +1,7 @@
 # UserManagementAPI
 
 A minimal ASP.NET Core Web API for user management, featuring CRUD endpoints, authentication, logging, error handling, and Swagger documentation.  
-This project is an **assignment for the course: Back-End Development with .NET on Coursera** and is designed as a showcase/portfolio example.
+This project is an **assignment for the course: Back-End Development with .NET on Coursera**.
 
 ---
 
