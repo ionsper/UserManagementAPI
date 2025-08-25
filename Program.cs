@@ -7,6 +7,7 @@ using System.Collections.Concurrent;
 using Serilog;
 using Microsoft.OpenApi.Models;
 using UserManagementAPI;
+using UserManagementAPI.Models; // <-- Add this line
 
 Log.Logger = new LoggerConfiguration()
     .WriteTo.File("logs.txt")

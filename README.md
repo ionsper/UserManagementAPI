@@ -127,7 +127,8 @@ Replace `TestToken` with your token if you change it in the code.
 ```text
 UserManagementAPI/
   Program.cs
-  User.cs
+  Models/
+    User.cs
   http-tests/
     api-tests.http
   README.md
