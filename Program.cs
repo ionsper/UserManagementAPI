@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Http;
 using System.Collections.Concurrent;
 using Serilog;
 using Microsoft.OpenApi.Models;
-using UserManagementAPI;
 using UserManagementAPI.Models;
 
 Log.Logger = new LoggerConfiguration()
